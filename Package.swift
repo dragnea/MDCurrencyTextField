@@ -4,23 +4,28 @@
 import PackageDescription
 
 let package = Package(
-    name: "CurrencyTextField",
+    name: "MDCurrencyTextField",
     platforms: [
         .iOS(.v12)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "CurrencyTextField",
-            targets: ["CurrencyTextField"]),
+            name: "MDCurrencyTextField",
+            targets: ["MDCurrencyTextField"]
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "CurrencyTextField"),
+            name: "MDCurrencyTextField", 
+            path: "Sources"
+        ),
         .testTarget(
-            name: "CurrencyTextFieldTests",
-            dependencies: ["CurrencyTextField"]),
+            name: "MDCurrencyTextFieldTests",
+            dependencies: ["MDCurrencyTextField"], 
+            path: "Tests"
+        ),
     ]
 )

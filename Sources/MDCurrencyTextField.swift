@@ -1,17 +1,17 @@
 //
-//  CurrencyTextField.swift
-//  CurrencyTextField
+//  MDCurrencyTextField.swift
+//  MDCurrencyTextField
 //
 //  Created by Mihai Dragnea on 23.12.2023.
 //
 
 import UIKit
 
-public protocol CurrencyTextFieldDelegate: UITextFieldDelegate {
-    func textField(_ textFied: CurrencyTextField, didChange value: Decimal)
+public protocol MDCurrencyTextFieldDelegate: UITextFieldDelegate {
+    func textField(_ textFied: MDCurrencyTextField, didChange value: Decimal)
 }
 
-public class CurrencyTextField: UITextField {
+public class MDCurrencyTextField: UITextField {
     
     public var maximumIntegerDigits: Int {
         get {
@@ -69,7 +69,7 @@ public class CurrencyTextField: UITextField {
         }
     }
     
-    private let textFieldImpl = TextFieldDelegateImpl()
+    private let textFieldImpl = MDCurrencyTextFieldImpl()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,6 +94,10 @@ public class CurrencyTextField: UITextField {
     */
     public func setValue(_ value: Decimal?) {
         textFieldImpl.setValue(textField: self, decimal: value, callDelegate: false)
+    }
+    
+    public var value: Decimal {
+        return textFieldImpl.value
     }
     
     /**

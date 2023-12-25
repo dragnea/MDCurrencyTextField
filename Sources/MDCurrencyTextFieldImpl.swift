@@ -1,13 +1,13 @@
 //
-//  TextFieldDelegateImpl.swift
-//  TextFieldDelegateImpl
+//  MDCurrencyTextFieldImpl.swift
+//  MDCurrencyTextFieldImpl
 //
 //  Created by Mihai Dragnea on 23.12.2023.
 //
 
 import UIKit
 
-internal class TextFieldDelegateImpl: NSObject, UITextFieldDelegate {
+internal class MDCurrencyTextFieldImpl: NSObject, UITextFieldDelegate {
     
     lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -113,8 +113,8 @@ internal class TextFieldDelegateImpl: NSObject, UITextFieldDelegate {
             value = 0
             textField.text = nil
         }
-        if let textField = (textField as? CurrencyTextField), callDelegate {
-            (forwardingDelegate as? CurrencyTextFieldDelegate)?.textField(textField, didChange: value)
+        if let textField = (textField as? MDCurrencyTextField), callDelegate {
+            (forwardingDelegate as? MDCurrencyTextFieldDelegate)?.textField(textField, didChange: value)
         }
     }
     

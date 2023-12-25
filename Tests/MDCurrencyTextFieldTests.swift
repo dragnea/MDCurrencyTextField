@@ -1,5 +1,5 @@
 import XCTest
-@testable import CurrencyTextField
+@testable import MDCurrencyTextField
 
 final class CurrencyTextFieldTests: XCTestCase {
     func testExample() throws {
