@@ -83,7 +83,6 @@ public class MDCurrencyTextField: UITextField {
     
     private func setup() {
         keyboardType = .decimalPad
-        adjustsFontSizeToFitWidth = true
         super.delegate = textFieldImpl
     }
     

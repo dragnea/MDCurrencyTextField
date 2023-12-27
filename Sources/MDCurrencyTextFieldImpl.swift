@@ -100,7 +100,6 @@ internal class MDCurrencyTextFieldImpl: NSObject, UITextFieldDelegate {
     }
     
     func formatterUpdated(textField: UITextField) {
-        setValue(textField: textField, decimal: textField.text?.isEmpty ?? true ? nil : value, callDelegate: false)
         textField.placeholder = formattedString(from: 0)
     }
     
